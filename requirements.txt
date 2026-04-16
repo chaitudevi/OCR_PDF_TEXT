@@ -1,0 +1,24 @@
+# ─────────────────────────────────────────────────────────────────
+# PDF OCR & Summariser – Python dependencies
+# Install with:  pip install -r requirements.txt
+# ─────────────────────────────────────────────────────────────────
+
+# ── Web framework ─────────────────────────────────────────────────
+streamlit>=1.35.0,<2.0.0
+
+# ── PDF processing ────────────────────────────────────────────────
+PyMuPDF>=1.24.0,<2.0.0          # fitz – PDF to image rasterisation
+
+# ── OCR ───────────────────────────────────────────────────────────
+pytesseract>=0.3.10,<1.0.0      # Python bindings for Tesseract OCR
+Pillow>=10.0.0,<12.0.0          # Image manipulation
+
+# ── Summarisation (HuggingFace) ───────────────────────────────────
+transformers>=4.40.0,<5.0.0     # BART model pipeline
+torch>=2.0.0                    # PyTorch backend for transformers
+# NOTE: torch installs ~2 GB of binaries.  If you only want the
+#       extractive (fallback) summariser, comment out the two lines
+#       above – the app will still work.
+
+# ── Utilities ─────────────────────────────────────────────────────
+# (all others – re, io, logging, pathlib – are stdlib; no install needed)
